@@ -1,0 +1,16 @@
+[Unit]
+Description=MIDI Router Service
+After=sound.target
+Wants=sound.target
+
+[Service]
+ExecStart=/home/antoine/midi/build/MIDIMonitor
+WorkingDirectory=/home/antoine/midi
+Restart=always
+User=antoine
+Group=antoine
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
